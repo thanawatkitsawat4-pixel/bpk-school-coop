@@ -6,338 +6,646 @@
 
 <title>สหกรณ์โรงเรียน</title>
 
+<!-- ไอคอนเว็บไซต์ -->
+<link rel="icon"
+href="https://cdn-icons-png.flaticon.com/512/3081/3081840.png">
+
 <style>
 
-* {
-    box-sizing: border-box;
+*{
+    box-sizing:border-box;
 }
 
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f5f7fb;
-    color: #222;
+body{
+    margin:0;
+    font-family:Arial,"Tahoma",sans-serif;
+
+    background:
+    linear-gradient(rgba(245,248,246,.92),rgba(245,248,246,.92)),
+    linear-gradient(135deg,#e8f5e9,#fff3e0);
+
+    color:#222;
 }
 
-/* ===== Header ===== */
+/* =========================
+   LOGIN
+========================= */
 
-header {
-    background: #1976d2;
-    color: white;
-    padding: 18px 25px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 100;
+.login-page{
+    position:fixed;
+    inset:0;
+    background:
+    linear-gradient(135deg,#0b8f55,#087f4a);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:99999;
 }
 
-.logo {
-    font-size: 24px;
-    font-weight: bold;
+.login-box{
+    width:92%;
+    max-width:420px;
+    background:white;
+    border-radius:24px;
+    padding:30px;
+    text-align:center;
+    box-shadow:0 15px 40px rgba(0,0,0,.25);
 }
 
-.cart-button {
-    background: white;
-    color: #1976d2;
-    border: none;
-    padding: 10px 16px;
-    border-radius: 12px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
+.school-icon{
+    width:80px;
+    height:80px;
+    margin:auto;
+    border-radius:22px;
+    background:#0b8f55;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:42px;
 }
 
-/* ===== Hero ===== */
-
-.hero {
-    text-align: center;
-    padding: 35px 20px;
-    background: white;
+.login-box h1{
+    margin:15px 0 5px;
 }
 
-.hero h1 {
-    margin-bottom: 10px;
+.login-box p{
+    color:#777;
 }
 
-.hero p {
-    color: #666;
+.login-box input{
+    width:100%;
+    padding:14px;
+    margin:8px 0;
+    border:1px solid #ddd;
+    border-radius:12px;
+    font-size:16px;
 }
 
-/* ===== Category ===== */
-
-.categories {
-    display: flex;
-    gap: 10px;
-    padding: 20px;
-    justify-content: center;
-    flex-wrap: wrap;
+.login-btn{
+    width:100%;
+    margin-top:10px;
+    padding:14px;
+    border:none;
+    border-radius:12px;
+    background:#0b8f55;
+    color:white;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
 }
 
-.category-btn {
-    border: none;
-    background: white;
-    padding: 10px 18px;
-    border-radius: 20px;
-    cursor: pointer;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+.login-btn:hover{
+    background:#087344;
 }
 
-.category-btn:hover {
-    background: #1976d2;
-    color: white;
+.login-error{
+    color:#d32f2f;
+    margin-top:12px;
+    display:none;
 }
 
-/* ===== Products ===== */
+/* =========================
+   HEADER
+========================= */
 
-.products {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
-    padding: 20px;
-    max-width: 1200px;
-    margin: auto;
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    background:#087f4a;
+    color:white;
+
+    padding:14px 20px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    box-shadow:0 3px 12px rgba(0,0,0,.15);
 }
 
-.product {
-    background: white;
-    border-radius: 16px;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-weight:bold;
+    font-size:21px;
 }
 
-.product-img {
-    font-size: 60px;
-    margin-bottom: 10px;
+.logo-icon{
+    width:42px;
+    height:42px;
+    background:white;
+    color:#087f4a;
+    border-radius:12px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 }
 
-.product h3 {
-    margin: 8px 0;
+.header-right{
+    display:flex;
+    align-items:center;
+    gap:10px;
 }
 
-.price {
-    font-size: 20px;
-    font-weight: bold;
-    color: #1976d2;
-    margin: 10px 0;
+.student{
+    background:rgba(255,255,255,.15);
+    padding:9px 12px;
+    border-radius:10px;
+    font-size:14px;
 }
 
-.add-button {
-    border: none;
-    background: #1976d2;
-    color: white;
-    padding: 10px 18px;
-    border-radius: 10px;
-    cursor: pointer;
+.cart-button{
+    background:#f57c00;
+    color:white;
+    border:none;
+    padding:11px 15px;
+    border-radius:12px;
+    cursor:pointer;
+    font-weight:bold;
 }
 
-.add-button:hover {
-    background: #125ca8;
+/* =========================
+   ANNOUNCEMENT
+========================= */
+
+.announcement{
+    margin:20px auto;
+    width:92%;
+    max-width:1100px;
+
+    background:linear-gradient(135deg,#ff7043,#f4511e);
+    color:white;
+
+    border-radius:20px;
+    padding:22px;
+
+    box-shadow:0 8px 20px rgba(244,81,30,.22);
 }
 
-/* ===== Modal ===== */
-
-.modal {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.5);
-    justify-content: center;
-    align-items: center;
-    z-index: 999;
-    padding: 20px;
+.announcement h2{
+    margin:0 0 8px;
 }
 
-.modal-box {
-    background: white;
-    width: 100%;
-    max-width: 600px;
-    max-height: 90vh;
-    overflow-y: auto;
-    border-radius: 20px;
-    padding: 25px;
+.announcement-list{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:12px;
+    margin-top:15px;
 }
 
-.modal-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.sale-card{
+    background:white;
+    color:#222;
+    padding:15px;
+    border-radius:14px;
 }
 
-.close {
-    background: #eee;
-    border: none;
-    font-size: 20px;
-    width: 40px;
-    height: 40px;
-    border-radius: 10px;
-    cursor: pointer;
+.sale-old{
+    color:#999;
+    text-decoration:line-through;
+    margin-right:6px;
 }
 
-/* ===== Cart ===== */
-
-.cart-item {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    padding: 15px 0;
-    border-bottom: 1px solid #eee;
+.sale-new{
+    color:#d32f2f;
+    font-weight:bold;
+    font-size:20px;
 }
 
-.cart-icon {
-    font-size: 40px;
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    text-align:center;
+    padding:15px 20px;
 }
 
-.cart-info {
-    flex: 1;
+.hero h1{
+    margin:10px 0;
 }
 
-.cart-info h3 {
-    margin: 0 0 5px;
+.hero p{
+    color:#666;
 }
 
-.quantity {
-    display: flex;
-    align-items: center;
-    gap: 8px;
+/* =========================
+   CATEGORY
+========================= */
+
+.categories{
+    display:flex;
+    gap:10px;
+    justify-content:center;
+    flex-wrap:wrap;
+    padding:10px 20px 20px;
 }
 
-.quantity button {
-    width: 30px;
-    height: 30px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    background: #e3e3e3;
-    font-size: 18px;
+.category-btn{
+    border:none;
+    background:white;
+    padding:10px 18px;
+    border-radius:20px;
+    cursor:pointer;
+    box-shadow:0 3px 10px rgba(0,0,0,.08);
 }
 
-.delete-button {
-    border: none;
-    background: #ffdddd;
-    padding: 8px;
-    border-radius: 8px;
-    cursor: pointer;
+.category-btn:hover{
+    background:#087f4a;
+    color:white;
 }
 
-.total {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-    font-size: 22px;
-    font-weight: bold;
+/* =========================
+   PRODUCTS
+========================= */
+
+.products{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+    gap:18px;
+
+    width:92%;
+    max-width:1100px;
+    margin:auto;
+    padding-bottom:40px;
 }
 
-.pay-button {
-    width: 100%;
-    border: none;
-    background: #2e7d32;
-    color: white;
-    padding: 15px;
-    border-radius: 12px;
-    font-size: 18px;
-    margin-top: 20px;
-    cursor: pointer;
+.product{
+    background:white;
+    border-radius:18px;
+    padding:18px;
+    text-align:center;
+
+    box-shadow:0 5px 18px rgba(0,0,0,.08);
+    position:relative;
 }
 
-/* ===== QR ===== */
-
-.qr-section {
-    text-align: center;
-    padding: 20px;
+.badge{
+    position:absolute;
+    top:12px;
+    left:12px;
+    background:#e53935;
+    color:white;
+    padding:5px 8px;
+    border-radius:8px;
+    font-size:12px;
+    font-weight:bold;
 }
 
-#qrcode {
-    display: flex;
-    justify-content: center;
-    margin: 20px;
+.product-img{
+    font-size:58px;
+    margin:15px;
 }
 
-.demo-text {
-    color: #777;
-    font-size: 13px;
+.product h3{
+    margin:8px 0;
 }
 
-/* ===== Empty ===== */
+.price-old{
+    color:#999;
+    text-decoration:line-through;
+}
 
-.empty {
-    text-align: center;
-    padding: 40px;
-    color: #777;
+.price{
+    font-size:21px;
+    font-weight:bold;
+    color:#087f4a;
+    margin:7px;
+}
+
+.add-button{
+    border:none;
+    background:#087f4a;
+    color:white;
+    padding:10px 18px;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.add-button:hover{
+    background:#075f38;
+}
+
+/* =========================
+   MODAL
+========================= */
+
+.modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.5);
+    align-items:center;
+    justify-content:center;
+    z-index:9999;
+    padding:20px;
+}
+
+.modal-box{
+    background:white;
+    width:100%;
+    max-width:620px;
+    max-height:90vh;
+    overflow:auto;
+    border-radius:22px;
+    padding:24px;
+}
+
+.modal-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.close{
+    border:none;
+    background:#eee;
+    width:40px;
+    height:40px;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:18px;
+}
+
+/* =========================
+   CART
+========================= */
+
+.cart-item{
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    padding:14px 0;
+    border-bottom:1px solid #eee;
+}
+
+.cart-icon{
+    font-size:38px;
+}
+
+.cart-info{
+    flex:1;
+}
+
+.cart-info h3{
+    margin:0 0 4px;
+}
+
+.quantity{
+    display:flex;
+    align-items:center;
+    gap:7px;
+}
+
+.quantity button{
+    width:30px;
+    height:30px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.delete-button{
+    border:none;
+    background:#ffdddd;
+    padding:8px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.total{
+    display:flex;
+    justify-content:space-between;
+    font-size:22px;
+    font-weight:bold;
+    padding-top:20px;
+}
+
+.pay-button{
+    width:100%;
+    margin-top:18px;
+    border:none;
+    background:#2e7d32;
+    color:white;
+    padding:14px;
+    border-radius:12px;
+    font-size:17px;
+    cursor:pointer;
+}
+
+.empty{
+    text-align:center;
+    padding:35px;
+    color:#777;
+}
+
+/* =========================
+   QR
+========================= */
+
+.qr-section{
+    text-align:center;
+}
+
+#qrcode{
+    display:flex;
+    justify-content:center;
+    margin:20px;
+}
+
+/* =========================
+   LOGOUT
+========================= */
+
+.logout-btn{
+    margin-top:8px;
+    border:none;
+    background:#ddd;
+    padding:8px 12px;
+    border-radius:8px;
+    cursor:pointer;
 }
 
 </style>
 </head>
 
-
 <body>
 
-<!-- HEADER -->
+
+<!-- =========================
+     LOGIN
+========================= -->
+
+<div id="loginPage" class="login-page">
+
+    <div class="login-box">
+
+        <div class="school-icon">
+            🏫
+        </div>
+
+        <h1>สหกรณ์โรงเรียน</h1>
+
+        <p>เข้าสู่ระบบนักเรียน</p>
+
+        <input
+            type="text"
+            id="studentId"
+            placeholder="เลขนักเรียน"
+        >
+
+        <input
+            type="text"
+            id="birthDate"
+            placeholder="วันเกิด เช่น 07/03/54"
+        >
+
+        <button
+            class="login-btn"
+            onclick="login()"
+        >
+            🔐 เข้าสู่ระบบ
+        </button>
+
+        <div id="loginError" class="login-error">
+            เลขนักเรียนหรือวันเกิดไม่ถูกต้อง
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     HEADER
+========================= -->
 
 <header>
 
     <div class="logo">
-        🏫 สหกรณ์โรงเรียน
+
+        <div class="logo-icon">
+            🛍️
+        </div>
+
+        <span>
+            สหกรณ์โรงเรียน
+        </span>
+
     </div>
 
-    <button class="cart-button" onclick="openCart()">
-        🛒 ตะกร้า
-        (<span id="cartCount">0</span>)
-    </button>
+    <div class="header-right">
+
+        <div class="student">
+            👤 <span id="studentDisplay">-</span>
+        </div>
+
+        <button
+            class="cart-button"
+            onclick="openCart()"
+        >
+            🛒 ตะกร้า
+            (<span id="cartCount">0</span>)
+        </button>
+
+    </div>
 
 </header>
 
 
-<!-- HERO -->
+<!-- =========================
+     ANNOUNCEMENT
+========================= -->
+
+<section class="announcement">
+
+    <h2>📢 โปรโมชั่นวันนี้</h2>
+
+    <div id="announcementList"
+         class="announcement-list">
+    </div>
+
+</section>
+
+
+<!-- =========================
+     HERO
+========================= -->
 
 <section class="hero">
 
-    <h1>🛍️ ร้านค้าสหกรณ์โรงเรียน</h1>
+    <h1>🛒 ร้านค้าสหกรณ์โรงเรียน</h1>
 
     <p>
-        ขนม น้ำ เครื่องเขียน และอุปกรณ์การเรียน
+        ซื้อขนม เครื่องดื่ม เครื่องเขียน
+        และอุปกรณ์การเรียนได้ที่นี่
     </p>
 
 </section>
 
 
-<!-- CATEGORY -->
+<!-- =========================
+     CATEGORY
+========================= -->
 
 <div class="categories">
 
-    <button class="category-btn" onclick="showCategory('ทั้งหมด')">
+    <button
+        class="category-btn"
+        onclick="showCategory('ทั้งหมด')">
         ทั้งหมด
     </button>
 
-    <button class="category-btn" onclick="showCategory('ขนม')">
+    <button
+        class="category-btn"
+        onclick="showCategory('ขนม')">
         🍪 ขนม
     </button>
 
-    <button class="category-btn" onclick="showCategory('น้ำ')">
+    <button
+        class="category-btn"
+        onclick="showCategory('น้ำ')">
         🥤 น้ำ
     </button>
 
-    <button class="category-btn" onclick="showCategory('เครื่องเขียน')">
+    <button
+        class="category-btn"
+        onclick="showCategory('เครื่องเขียน')">
         ✏️ เครื่องเขียน
     </button>
 
-    <button class="category-btn" onclick="showCategory('อุปกรณ์')">
+    <button
+        class="category-btn"
+        onclick="showCategory('อุปกรณ์')">
         🎒 อุปกรณ์
     </button>
 
 </div>
 
 
-<!-- PRODUCTS -->
+<!-- =========================
+     PRODUCTS
+========================= -->
 
-<div id="products" class="products"></div>
+<div
+    id="products"
+    class="products">
+</div>
 
 
-<!-- CART MODAL -->
+<!-- =========================
+     CART
+========================= -->
 
-<div id="cartModal" class="modal">
+<div
+    id="cartModal"
+    class="modal">
 
     <div class="modal-box">
 
@@ -345,7 +653,9 @@ header {
 
             <h2>🛒 ตะกร้าสินค้า</h2>
 
-            <button class="close" onclick="closeCart()">
+            <button
+                class="close"
+                onclick="closeCart()">
                 ✕
             </button>
 
@@ -355,7 +665,9 @@ header {
 
         <div class="total">
 
-            <span>รวมทั้งหมด</span>
+            <span>
+                รวมทั้งหมด
+            </span>
 
             <span>
                 ฿<span id="cartTotal">0</span>
@@ -363,7 +675,9 @@ header {
 
         </div>
 
-        <button class="pay-button" onclick="openPayment()">
+        <button
+            class="pay-button"
+            onclick="openPayment()">
             💳 ชำระเงิน
         </button>
 
@@ -372,9 +686,13 @@ header {
 </div>
 
 
-<!-- PAYMENT MODAL -->
+<!-- =========================
+     PAYMENT
+========================= -->
 
-<div id="paymentModal" class="modal">
+<div
+    id="paymentModal"
+    class="modal">
 
     <div class="modal-box">
 
@@ -382,7 +700,9 @@ header {
 
             <h2>📱 ชำระเงิน</h2>
 
-            <button class="close" onclick="closePayment()">
+            <button
+                class="close"
+                onclick="closePayment()">
                 ✕
             </button>
 
@@ -401,8 +721,8 @@ header {
 
             <div id="qrcode"></div>
 
-            <p class="demo-text">
-                QR นี้เป็นตัวอย่างสำหรับสาธิตระบบเว็บไซต์
+            <p style="color:#777;font-size:13px;">
+                QR นี้ใช้สำหรับสาธิตระบบเท่านั้น
             </p>
 
         </div>
@@ -412,141 +732,293 @@ header {
 </div>
 
 
-<!-- QR CODE LIBRARY -->
+<!-- QR Library -->
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
 
 <script>
 
-/* =====================================
-   ข้อมูลสินค้า
-===================================== */
+/* =================================================
+   บัญชีตัวอย่าง
+================================================= */
+
+const users = [
+    {
+        studentId: "38761",
+        birthDate: "07/03/54"
+    }
+];
+
+
+/* =================================================
+   สินค้า
+================================================= */
 
 const products = [
 
     {
-        id: 1,
-        name: "ขนมมันฝรั่ง",
-        price: 10,
-        category: "ขนม",
-        icon: "🍟"
+        id:1,
+        name:"ขนมมันฝรั่ง",
+        price:10,
+        oldPrice:15,
+        category:"ขนม",
+        icon:"🍟",
+        sale:true
     },
 
     {
-        id: 2,
-        name: "ช็อกโกแลต",
-        price: 15,
-        category: "ขนม",
-        icon: "🍫"
+        id:2,
+        name:"ช็อกโกแลต",
+        price:15,
+        oldPrice:15,
+        category:"ขนม",
+        icon:"🍫",
+        sale:false
     },
 
     {
-        id: 3,
-        name: "ขนมปัง",
-        price: 20,
-        category: "ขนม",
-        icon: "🍞"
+        id:3,
+        name:"ขนมปัง",
+        price:20,
+        oldPrice:25,
+        category:"ขนม",
+        icon:"🍞",
+        sale:true
     },
 
     {
-        id: 4,
-        name: "น้ำดื่ม",
-        price: 7,
-        category: "น้ำ",
-        icon: "💧"
+        id:4,
+        name:"น้ำดื่ม",
+        price:7,
+        oldPrice:7,
+        category:"น้ำ",
+        icon:"💧",
+        sale:false
     },
 
     {
-        id: 5,
-        name: "น้ำส้ม",
-        price: 15,
-        category: "น้ำ",
-        icon: "🧃"
+        id:5,
+        name:"น้ำส้ม",
+        price:12,
+        oldPrice:15,
+        category:"น้ำ",
+        icon:"🧃",
+        sale:true
     },
 
     {
-        id: 6,
-        name: "นม",
-        price: 12,
-        category: "น้ำ",
-        icon: "🥛"
+        id:6,
+        name:"นม",
+        price:12,
+        oldPrice:12,
+        category:"น้ำ",
+        icon:"🥛",
+        sale:false
     },
 
     {
-        id: 7,
-        name: "ปากกาลูกลื่น",
-        price: 10,
-        category: "เครื่องเขียน",
-        icon: "🖊️"
+        id:7,
+        name:"ปากกาลูกลื่น",
+        price:10,
+        oldPrice:10,
+        category:"เครื่องเขียน",
+        icon:"🖊️",
+        sale:false
     },
 
     {
-        id: 8,
-        name: "ดินสอ",
-        price: 5,
-        category: "เครื่องเขียน",
-        icon: "✏️"
+        id:8,
+        name:"ดินสอ",
+        price:5,
+        oldPrice:7,
+        category:"เครื่องเขียน",
+        icon:"✏️",
+        sale:true
     },
 
     {
-        id: 9,
-        name: "ยางลบ",
-        price: 5,
-        category: "เครื่องเขียน",
-        icon: "◻️"
+        id:9,
+        name:"ยางลบ",
+        price:5,
+        oldPrice:5,
+        category:"เครื่องเขียน",
+        icon:"◻️",
+        sale:false
     },
 
     {
-        id: 10,
-        name: "สมุด",
-        price: 20,
-        category: "อุปกรณ์",
-        icon: "📓"
+        id:10,
+        name:"สมุด",
+        price:20,
+        oldPrice:25,
+        category:"อุปกรณ์",
+        icon:"📓",
+        sale:true
     },
 
     {
-        id: 11,
-        name: "ไม้บรรทัด",
-        price: 10,
-        category: "อุปกรณ์",
-        icon: "📏"
+        id:11,
+        name:"ไม้บรรทัด",
+        price:10,
+        oldPrice:10,
+        category:"อุปกรณ์",
+        icon:"📏",
+        sale:false
     },
 
     {
-        id: 12,
-        name: "กระเป๋าดินสอ",
-        price: 50,
-        category: "อุปกรณ์",
-        icon: "🎒"
+        id:12,
+        name:"กระเป๋าดินสอ",
+        price:50,
+        oldPrice:50,
+        category:"อุปกรณ์",
+        icon:"🎒",
+        sale:false
     }
 
 ];
 
 
-/* =====================================
+/* =================================================
    ตะกร้า
-===================================== */
+================================================= */
 
-let cart = JSON.parse(localStorage.getItem("schoolCart")) || [];
+let cart =
+JSON.parse(localStorage.getItem("schoolCart")) || [];
 
 
-/* =====================================
+/* =================================================
+   LOGIN
+================================================= */
+
+function login(){
+
+    const studentId =
+        document.getElementById("studentId").value.trim();
+
+    const birthDate =
+        document.getElementById("birthDate").value.trim();
+
+    const user =
+        users.find(
+            u =>
+            u.studentId === studentId &&
+            u.birthDate === birthDate
+        );
+
+
+    if(user){
+
+        localStorage.setItem(
+            "schoolStudent",
+            studentId
+        );
+
+        document.getElementById(
+            "loginPage"
+        ).style.display = "none";
+
+        document.getElementById(
+            "studentDisplay"
+        ).innerText = studentId;
+
+    }
+    else{
+
+        document.getElementById(
+            "loginError"
+        ).style.display = "block";
+
+    }
+
+}
+
+
+/* =================================================
+   ตรวจสอบ Login ตอนเปิดเว็บ
+================================================= */
+
+const savedStudent =
+localStorage.getItem("schoolStudent");
+
+if(savedStudent){
+
+    document.getElementById(
+        "loginPage"
+    ).style.display = "none";
+
+    document.getElementById(
+        "studentDisplay"
+    ).innerText = savedStudent;
+
+}
+
+
+/* =================================================
+   โปรโมชั่นวันนี้
+================================================= */
+
+function showAnnouncements(){
+
+    const box =
+        document.getElementById("announcementList");
+
+    const saleProducts =
+        products.filter(p => p.sale);
+
+    box.innerHTML = "";
+
+    saleProducts.forEach(product => {
+
+        box.innerHTML += `
+
+            <div class="sale-card">
+
+                <strong>
+                    ${product.icon}
+                    ${product.name}
+                </strong>
+
+                <div style="margin-top:8px;">
+
+                    <span class="sale-old">
+                        ฿${product.oldPrice}
+                    </span>
+
+                    <span class="sale-new">
+                        ฿${product.price}
+                    </span>
+
+                </div>
+
+            </div>
+
+        `;
+
+    });
+
+}
+
+
+/* =================================================
    แสดงสินค้า
-===================================== */
+================================================= */
 
-function showCategory(category) {
+function showCategory(category){
 
-    const container = document.getElementById("products");
+    const container =
+        document.getElementById("products");
 
     container.innerHTML = "";
 
     let list = products;
 
-    if (category !== "ทั้งหมด") {
+    if(category !== "ทั้งหมด"){
 
-        list = products.filter(
-            product => product.category === category
+        list =
+        products.filter(
+            p => p.category === category
         );
 
     }
@@ -558,6 +1030,12 @@ function showCategory(category) {
 
             <div class="product">
 
+                ${
+                    product.sale
+                    ? `<div class="badge">ลดราคา</div>`
+                    : ""
+                }
+
                 <div class="product-img">
                     ${product.icon}
                 </div>
@@ -566,14 +1044,21 @@ function showCategory(category) {
                     ${product.name}
                 </h3>
 
+                ${
+                    product.sale
+                    ? `<div class="price-old">
+                        ฿${product.oldPrice}
+                       </div>`
+                    : ""
+                }
+
                 <div class="price">
                     ฿${product.price}
                 </div>
 
                 <button
                     class="add-button"
-                    onclick="addToCart(${product.id})"
-                >
+                    onclick="addToCart(${product.id})">
                     🛒 เพิ่มลงตะกร้า
                 </button>
 
@@ -586,38 +1071,37 @@ function showCategory(category) {
 }
 
 
-/* =====================================
+/* =================================================
    เพิ่มสินค้า
-===================================== */
+================================================= */
 
-function addToCart(id) {
+function addToCart(id){
 
-    const product = products.find(
-        p => p.id === id
-    );
+    const product =
+        products.find(
+            p => p.id === id
+        );
 
-    const existing = cart.find(
-        item => item.id === id
-    );
+    const existing =
+        cart.find(
+            item => item.id === id
+        );
 
 
-    if (existing) {
+    if(existing){
 
         existing.quantity++;
 
-    } else {
+    }
+    else{
 
         cart.push({
 
-            id: product.id,
-
-            name: product.name,
-
-            price: product.price,
-
-            icon: product.icon,
-
-            quantity: 1
+            id:product.id,
+            name:product.name,
+            price:product.price,
+            icon:product.icon,
+            quantity:1
 
         });
 
@@ -626,18 +1110,14 @@ function addToCart(id) {
 
     saveCart();
 
-    alert(
-        "เพิ่ม " + product.name + " ลงตะกร้าแล้ว"
-    );
-
 }
 
 
-/* =====================================
-   บันทึกตะกร้า
-===================================== */
+/* =================================================
+   บันทึก
+================================================= */
 
-function saveCart() {
+function saveCart(){
 
     localStorage.setItem(
         "schoolCart",
@@ -649,30 +1129,30 @@ function saveCart() {
 }
 
 
-/* =====================================
-   จำนวนสินค้าบนปุ่มตะกร้า
-===================================== */
+/* =================================================
+   จำนวนตะกร้า
+================================================= */
 
-function updateCartCount() {
+function updateCartCount(){
 
     let count = 0;
 
-    cart.forEach(item => {
+    cart.forEach(
+        item => count += item.quantity
+    );
 
-        count += item.quantity;
-
-    });
-
-    document.getElementById("cartCount").innerText = count;
+    document.getElementById(
+        "cartCount"
+    ).innerText = count;
 
 }
 
 
-/* =====================================
+/* =================================================
    เปิดตะกร้า
-===================================== */
+================================================= */
 
-function openCart() {
+function openCart(){
 
     document.getElementById(
         "cartModal"
@@ -683,11 +1163,11 @@ function openCart() {
 }
 
 
-/* =====================================
+/* =================================================
    ปิดตะกร้า
-===================================== */
+================================================= */
 
-function closeCart() {
+function closeCart(){
 
     document.getElementById(
         "cartModal"
@@ -696,19 +1176,18 @@ function closeCart() {
 }
 
 
-/* =====================================
-   แสดงสินค้าในตะกร้า
-===================================== */
+/* =================================================
+   แสดงตะกร้า
+================================================= */
 
-function renderCart() {
+function renderCart(){
 
     const container =
         document.getElementById("cartItems");
 
     container.innerHTML = "";
 
-
-    if (cart.length === 0) {
+    if(cart.length === 0){
 
         container.innerHTML = `
 
@@ -716,7 +1195,7 @@ function renderCart() {
 
                 🛒
 
-                <br>
+                <br><br>
 
                 ยังไม่มีสินค้าในตะกร้า
 
@@ -736,10 +1215,11 @@ function renderCart() {
     let total = 0;
 
 
-    cart.forEach((item, index) => {
+    cart.forEach((item,index)=>{
 
         const subtotal =
-            item.price * item.quantity;
+            item.price *
+            item.quantity;
 
         total += subtotal;
 
@@ -764,12 +1244,12 @@ function renderCart() {
 
                 </div>
 
-
                 <div class="quantity">
 
                     <button
-                        onclick="changeQuantity(${index}, -1)"
-                    >
+                        onclick="
+                        changeQuantity(${index},-1)
+                        ">
                         −
                     </button>
 
@@ -778,18 +1258,19 @@ function renderCart() {
                     </span>
 
                     <button
-                        onclick="changeQuantity(${index}, 1)"
-                    >
+                        onclick="
+                        changeQuantity(${index},1)
+                        ">
                         +
                     </button>
 
                 </div>
 
-
                 <button
                     class="delete-button"
-                    onclick="removeItem(${index})"
-                >
+                    onclick="
+                    removeItem(${index})
+                    ">
                     🗑️
                 </button>
 
@@ -807,83 +1288,76 @@ function renderCart() {
 }
 
 
-/* =====================================
-   เพิ่ม / ลดจำนวน
-===================================== */
+/* =================================================
+   เปลี่ยนจำนวน
+================================================= */
 
-function changeQuantity(index, amount) {
+function changeQuantity(index,amount){
 
     cart[index].quantity += amount;
 
+    if(cart[index].quantity <= 0){
 
-    if (cart[index].quantity <= 0) {
-
-        cart.splice(index, 1);
+        cart.splice(index,1);
 
     }
 
-
     saveCart();
-
     renderCart();
 
 }
 
 
-/* =====================================
-   ลบสินค้า
-===================================== */
+/* =================================================
+   ลบ
+================================================= */
 
-function removeItem(index) {
+function removeItem(index){
 
-    cart.splice(index, 1);
+    cart.splice(index,1);
 
     saveCart();
-
     renderCart();
 
 }
 
 
-/* =====================================
-   คำนวณยอดรวม
-===================================== */
+/* =================================================
+   รวมเงิน
+================================================= */
 
-function getTotal() {
+function getTotal(){
 
     let total = 0;
 
-    cart.forEach(item => {
-
+    cart.forEach(
+        item =>
         total +=
-            item.price *
-            item.quantity;
-
-    });
+        item.price *
+        item.quantity
+    );
 
     return total;
 
 }
 
 
-/* =====================================
-   เปิดหน้าชำระเงิน
-===================================== */
+/* =================================================
+   เปิด QR
+================================================= */
 
-function openPayment() {
+function openPayment(){
 
-    if (cart.length === 0) {
+    if(cart.length === 0){
 
-        alert(
-            "ยังไม่มีสินค้าในตะกร้า"
-        );
-
+        alert("ยังไม่มีสินค้าในตะกร้า");
         return;
 
     }
 
 
-    const total = getTotal();
+    const total =
+        getTotal();
 
 
     document.getElementById(
@@ -896,35 +1370,32 @@ function openPayment() {
     ).style.display = "flex";
 
 
-    /* ล้าง QR เก่า */
-
     document.getElementById(
         "qrcode"
     ).innerHTML = "";
 
 
-    /* สร้าง QR ตัวอย่าง */
-
     new QRCode(
         document.getElementById("qrcode"),
         {
             text:
-                "DEMO-SCHOOL-COOP-" +
-                total +
-                "-PAYMENT",
-            width: 220,
-            height: 220
+            "DEMO-SCHOOL-COOP-" +
+            total +
+            "-PAYMENT",
+
+            width:220,
+            height:220
         }
     );
 
 }
 
 
-/* =====================================
-   ปิดหน้าชำระเงิน
-===================================== */
+/* =================================================
+   ปิด QR
+================================================= */
 
-function closePayment() {
+function closePayment(){
 
     document.getElementById(
         "paymentModal"
@@ -933,11 +1404,13 @@ function closePayment() {
 }
 
 
-/* =====================================
-   เริ่มต้นเว็บ
-===================================== */
+/* =================================================
+   เริ่มเว็บ
+================================================= */
 
 showCategory("ทั้งหมด");
+
+showAnnouncements();
 
 updateCartCount();
 
